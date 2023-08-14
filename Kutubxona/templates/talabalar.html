@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Talaba</title>
+</head>
+<body>
+  <h1>Hamma talabalar ro'yxati:</h1>
+  <br>
+  <hr>
+  <br>
+  <form method="get">
+      <input type="text" name="qid_soz" placeholder="So'z yozing...">
+      <button type="submit">Qidirish</button>
+  </form>
+  <br>
+  <br>
+  {% for talaba in talabalar %}
+    <h2>{{talaba.id}}.Ism: <a href="/bitta_talaba/{{talaba.id}}/">{{talaba.ism}}</a>({{talaba.kurs}}). Kitob soni: {{talaba.kitob_soni}}</h2>
+  <br>
+  <button><a href="/talaba_ochir/{{talaba.id}}/">O'chirish</a></button>
+  <button><a href="/talaba_update/{{talaba.id}}/">O'zgartirish</a></button>
+  {% endfor %}
+    <br>
+    <br>
+    <hr>
+    <form method="post">{% csrf_token %}
+        {{forma}}
+<!--        <input type="text" name="i" placeholder="ismingiz...">-->
+<!--        <label>Kursingiz:</label>-->
+<!--        <select name="k">-->
+<!--            <option value="1">1</option>-->
+<!--            <option value="2">2</option>-->
+<!--            <option value="3">3</option>-->
+<!--            <option value="4">4</option>-->
+<!--        </select>-->
+<!--        <input type="number" name="y" placeholder="yoshingiz...">-->
+<!--        <input type="number" name="k_s" placeholder="kitob soni...">-->
+        <button type="submit">Qo'shish</button>
+    </form>
+</body>
+</html>

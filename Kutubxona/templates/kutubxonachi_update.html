@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update kutubxonachi</title>
+</head>
+<body>
+    <center><h1>Kutubxonachi ma'lumotlarini o'zgartiring:</h1></center>
+    <br>
+    <hr>
+    <br>
+    <form method="post">{% csrf_token %}
+        <label>Ismi:</label>
+        <input name="i" type="text" value="{{kutubxonachi.ism}}">
+        <label>Ish vaqti:</label>
+        <input name="i_v" type="text" value="{{kutubxonachi.ish_vaqti}}">
+        <button type="submit">Saqlash</button>
+    </form>
+    <button><a href="/kutubxonachilar/">Orqaga</button>
+</body>
+</html>

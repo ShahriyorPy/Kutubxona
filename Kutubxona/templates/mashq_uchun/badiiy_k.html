@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Badiiylarku</title>
+</head>
+<body>
+    <h1><center>Badiiy kitoblar ro'yxati:</center></h1>
+    {% for kitob in badiiylar %}
+        <h3><li>{{kitob.nom}}</li></h3>
+    {% endfor %}
+</body>
+</html>

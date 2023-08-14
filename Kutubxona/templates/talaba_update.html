@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Talaba Update</title>
+</head>
+<body>
+    <center><h1>Talaba ma'lumotlarini o'zgartirish uchun:</h1></center>
+    <br>
+    <hr>
+    <br>
+    <form method="post">{% csrf_token %}
+        <label>Ismi:</label>
+        <input type="text" name="i" value="{{talaba.ism}}" disabled>
+        <label>Kursi:</label>
+        <input type="number" name="k" value="{{talaba.kurs}}">
+        <label>Yoshi:</label>
+        <input type="number" name="y" value="{{talaba.yosh}}">
+        <label>Kitob soni:</label>
+        <input type="number" name="k_s" value="{{talaba.kitob_soni}}">
+        <button type="submit">Saqlash</button>
+    </form>
+    <button><a href="/talabalar/">Orqaga</button>
+</body>
+</html>

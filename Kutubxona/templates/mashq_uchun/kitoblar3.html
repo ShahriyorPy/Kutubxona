@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitoblarku</title>
+</head>
+<body>
+    <h1><center>Sahifasi eng ko'p 3ta kitob:</center></h1>
+    <br>
+    <hr>
+    <br>
+    {% for k in kitoblar3 %}
+    <h3><li>{{k.nom}}</li></h3>
+    {% endfor %}
+</body>
+</html>

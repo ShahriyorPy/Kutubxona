@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitiruvchilar</title>
+</head>
+<body>
+    <h1><center>Hamma Bitiruvchilar ro'yxati:</center></h1>
+    <br>
+    <hr>
+    <br>
+    {% for talaba in bitiruvchilar %}
+        <h2>{{talaba.id}}.Ism: {{talaba.ism}}({{talaba.kurs}}). Kitob soni: {{talaba.kitob_soni}}</h2>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mualliflar</title>
+</head>
+<body>
+    <h1><center>Hamma Mualliflar ro'yxati:</center></h1>
+    <br>
+    <hr>
+    <br>
+    <form>
+        <input type="text" name="qid_soz" placeholder="Qidiruv uchun...">
+        <button type="submit">Qidirish</button>
+    </form>
+    <br>
+    <hr>
+    <br>
+    {% for muallif in mualliflar %}
+        <h2>{{muallif.ism}}</h2>
+    <button><a href="/muallif_ochir/{{muallif.id}}/">O'chirish</a></button>
+    <button><a href="/muallif_update/{{muallif.id}}/">O'zgartirish</a></button>
+    {% endfor %}
+    <br>
+    <br>
+    <hr>
+    <form method="post">{% csrf_token %}
+        {{forma}}
+<!--        <input type="text" name="i" placeholder="ismi...">-->
+<!--        <input type="number" name="t_y" placeholder="tugilgan yili...">-->
+<!--        <label>Tirik(on/off):</label>-->
+<!--        <input type="checkbox" name="t">-->
+<!--        <input type="number" name="k_s" placeholder="kitoblari soni...">-->
+<!--        <label>jinsi:</label>-->
+<!--        <select name="j">-->
+<!--            <option value="erkak">erkak</option>-->
+<!--            <option value="ayol">ayol</option>-->
+<!--        </select>-->
+        <button type="submit">Qoshish</button>
+    </form>
+</body>
+</html>

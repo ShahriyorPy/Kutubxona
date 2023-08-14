@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ontadankopku</title>
+</head>
+<body>
+    <h1><center>Kitob soni 10tadan ko'p bo'lgan mualliflar:</center></h1>
+    {% for i in ontadan_kop %}
+    <h3><li>{{i.ism}}</li></h3>
+    {% endfor %}
+</body>
+</html>

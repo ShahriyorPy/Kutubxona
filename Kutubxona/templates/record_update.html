@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Record update</title>
+</head>
+<body>
+    <center><h1>Record ma'lumotlarini o'zgartiring:</h1></center>
+    <br>
+    <hr>
+    <br>
+    <form method="post">{% csrf_token %}
+        <label>Qaytardi:</label>
+        {% if record.qaytardi == True %}
+            <input name="q" type="checkbox" checked>
+        {% else %}
+            <input name="q" type="checkbox">
+        {% endif %}
+        <label>Qaytarish sanasi:</label>
+        {% if record.qaytarish_sanasi %}
+            <input name="q_s" type="text" value="{{record.qaytarish_sanasi}}">
+        {% else %}
+            <input name="q_s" type="text" placeholder="YYYY-MM-DD">
+        {% endif %}
+        <button type="submit">Saqlash</button>
+    </form>
+    <button><a href="/hamma_recordlar/">Orqaga</button>
+</body>
+</html>

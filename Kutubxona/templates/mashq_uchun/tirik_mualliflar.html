@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiriklar</title>
+</head>
+<body>
+    <h1>Tirik mualliflar</h1>
+    <br>
+    <hr>
+    <br>
+    {% for t in tiriklar %}
+        <h3><li>{{t.ism}}</li></h3>
+    {% endfor %}
+</body>
+</html>

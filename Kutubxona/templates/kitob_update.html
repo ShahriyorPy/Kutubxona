@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitob Update</title>
+</head>
+<body>
+    <center><h1>Kitob ma'lumotlarini o'zgartirish uchun:</h1></center>
+    <br>
+    <hr>
+    <br>
+    <form method="post">{% csrf_token%}
+        <label>Nomi:</label>
+        <input type="text" name="n" value="{{kitob.nom}}" disabled>
+        <label>Muallifi:</label>
+        <select name="m">
+            <option value="{{kitob.muallif.id}}">{{kitob.muallif.ism}}</option>
+            {% for muallif in mualliflar %}
+                {% if muallif.id != kitob.muallif.id %}
+            <option value="{{muallif.id}}">{{muallif.ism}}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <label>Sahifasi:</label>
+        <input type="number" name="s" value="{{kitob.sahifa}}">
+        <label>Janri:</label>
+        <input type="text" name="j" value="{{kitob.janr}}">
+        <button type="submit">Saqlash</button>
+    </form>
+    <button><a href="/hamma_kitoblar/">Orqaga</button>
+</body>
+</html>

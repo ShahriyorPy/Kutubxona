@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kutubxonachilarku</title>
+</head>
+<body>
+    <h1>Hamma kutubxonachilar:</h1>
+    <br>
+    <hr>
+    <br>
+    <form method="get">
+        <input type="text" name="qid_soz" placeholder="Ism yozing...">
+        <button type="submit">Qidirish</button>
+    </form>
+    {% for i in kutubxonachilar %}
+    <h2>{{i.ism}}</h2>
+    <button><a href="/kutubxonachi_ochir/{{i.id}}/">O'chirish</a></button>
+    <button><a href="/kutubxonachi_update/{{i.id}}/">O'zgartirish</a></button>
+    {% endfor %}
+    <br>
+    <hr>
+    <br>
+    <form method="post">{% csrf_token %}
+        <table>
+            {{forma.as_table}}
+        </table>
+<!--        <input type="text" name="i" placeholder="ismi">-->
+<!--        <select name="i_v">-->
+<!--            {% for i in kutubxonachilar %}-->
+<!--                <option value="{{i.ish_vaqti}}">{{i.ish_vaqti}}</option>-->
+<!--            {% endfor %}-->
+<!--        </select>-->
+        <button type="submit">Qo'shish</button>
+    </form>
+</body>
+</html>

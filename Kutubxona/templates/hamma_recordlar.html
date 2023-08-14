@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recordlar</title>
+</head>
+<body>
+    <h1><center>Hamma recordlar:</center></h1>
+    <br>
+    <hr>
+    <br>
+    <form>
+        <input type="text" name="qid_soz" placeholder="Qidirish uchun...">
+        <button type="submit">Qidirish</button>
+    </form>
+    <br>
+    <hr>
+    <br>
+    {% for record in recordlar %}
+        <h3>{{record.id}}.{{record.talaba}}(kitoblari soni {{record.talaba.kitob_soni}}ta)</h3>
+    <button><a href="/record_ochir/{{record.id}}/">O'chirish</a></button>
+    <button><a href="/record_update/{{record.id}}/">O'zgartirish</a></button>
+    {% endfor %}
+    <br>
+    <br>
+    <hr>
+    <form method="post">{% csrf_token %}
+        {{ forma }}
+<!--        <label>Talaba:</label>-->
+<!--        <select name="t">-->
+<!--            {% for i in talabalar %}-->
+<!--                <option value="{{i.id}}">{{i.ism}}</option>-->
+<!--            {% endfor %}-->
+<!--        </select>-->
+<!--        <label>Kitob:</label>-->
+<!--        <select name="k">-->
+<!--            {% for j in kitoblar %}-->
+<!--                <option value="{{j.id}}">{{j.nom}}</option>-->
+<!--            {% endfor %}-->
+<!--        </select>-->
+<!--        <label>Kutubxonachi:</label>-->
+<!--        <select name="k_i">-->
+<!--            {% for k in kutubxonachilar %}-->
+<!--            <option value="{{k.id}}">{{k.ism}}</option>-->
+<!--            {% endfor %}-->
+<!--        </select>-->
+<!--        <label>Olingan sanasi:</label>-->
+<!--        <input type="date" name="o_s" placeholder="olingan sanasi...">-->
+<!--        <label>Qaytardi:</label>-->
+<!--        <input type="checkbox" name="q">-->
+<!--        <label>Qaytarish sanasi:</label>-->
+<!--        <input type="date" name="q_s" placeholder="qaytarish sanasi...">-->
+        <button type="submit">Qo'shish</button>
+    </form>
+</body>
+</html>

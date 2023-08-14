@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update muallif</title>
+</head>
+<body>
+    <center><h1>Muallif malumotlarini o'zgartiring:</h1></center>
+    <br>
+    <hr>
+    <br>
+    <form method="post">{% csrf_token %}
+        <label>Ismi:</label>
+        <input type="text" name="i" value="{{muallif.ism}}">
+        <label>Tug'ilgan yili:</label>
+        <input type="number" name="t_y" value="{{muallif.tugilgan_yil}}">
+        <label>Tirik:</label>
+        {% if muallif.tirik == True %}
+            <input name="t" type="checkbox" checked>
+        {% else %}
+            <input name="t" type="checkbox">
+        {% endif %}
+        <label>Kitoblari soni:</label>
+        <input type="number" name="k_s" value="{{muallif.kitoblari_soni}}">
+        <label>Jinsi:</label>
+        <input type="text" name="j" value="{{muallif.jinsi}}">
+        <button type="submit">Saqlash</button>
+    </form>
+    <button><a href="/mualliflar/">Orqaga</button>
+</body>
+</html>

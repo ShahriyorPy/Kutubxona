@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recordlarku</title>
+</head>
+<body>
+    <h1>Oxirgi 3ta recordlar:</h1>
+    <br>
+    <hr>
+    <br>
+    {% for r in recordlar3 %}
+        <h3><li>{{r.id}}.{{r}}</li></h3>
+    {% endfor %}
+</body>
+</html>
